@@ -129,7 +129,7 @@ a {
    
 
     .lang-en::before{
-      content:url('/img/en.png');
+      content:url('../img/en.png');
       position:absolute;
       top:2px;
       left:25px;
@@ -342,4 +342,53 @@ a {
       margin-right: -1px;
     })
   }
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000000000000000000000000;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  z-index:100000000;
+}
+
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  z-index:100000;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+
+.fa-angle-down:before, .fa-angle-up:before{
+  padding-left:5px !important;
 }

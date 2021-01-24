@@ -49,7 +49,22 @@ module.exports = {
         test: /\.(js|ts)$/, 
         exclude: /node_modules/, 
         loader: "babel-loader" 
-      }
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use:[
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath:'img/',
+              publicPath:'img/'
+            },
+          }
+           
+        ],
+      
+      } 
     ],
   }
 };
